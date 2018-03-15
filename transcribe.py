@@ -6,7 +6,6 @@ import logging
 import pika
 import requests
 from requests.auth import HTTPBasicAuth
-import swiftclient.client as swift_client
 
 DEBUG_MODE=True
 
