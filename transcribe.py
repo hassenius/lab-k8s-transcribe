@@ -104,8 +104,8 @@ def callback(ch, method, properties, body):
 
   # Update the metadata for the object with the transcribed text
   LOGGER.debug('Calling add_object_meta function to update calldata-transcript metadata')
-  data = {"calldata-transcript": text}
-  requests.post('http://%s/api/v1/mailboxes/%s/voicemails/%s/transcript' % (voicemailstore, container, obj), headers={'content-type':'application/json'}, data=data)
+  data = {"transcript": text}
+  requests.post('http://%s/api/v1/mailboxes/%s/voicemails/%s/transcript' % (voicemailstore, container, obj), headers={'content-type':'application/json'}, json=data)
 
   # Build the message body
   file_details['call_data']['transcript'] = text
